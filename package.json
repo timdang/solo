@@ -1,0 +1,17 @@
+{
+  "name": "basic_baccarat",
+  "version": "0.0.1",
+  "description": "basic baccarat using express",
+  "main": "server.js",
+  "repository": "",
+  "license": "Proprietary",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongoose": "^4.4.3"
+  },
+  "devDependencies": {}
+}
