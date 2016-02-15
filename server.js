@@ -13,5 +13,5 @@ app.get('/', function (req, res) {
 });
 
 app.listen(process.env.port);
-
+console.log('server is running');
 module.exports = app;
