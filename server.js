@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var app = express();
 var dbAddress = process.env.MONGOLAB_URI || 'mongodb://localhost:52147/bb';
 
-mongoose.connect(process.dbAddress);
+//mongoose.connect(process.dbAddress);
 
 // require('./config/middleware.js')(app, express);
 
