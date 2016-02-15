@@ -12,6 +12,6 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
-app.listen(process.env.port);
+app.listen(process.env.PORT);
 console.log('server is running');
 module.exports = app;
