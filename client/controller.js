@@ -133,20 +133,20 @@ angular.module('baccarat', ['baccarat.services'])
       $scope.wager -= $scope.wager;
       $timeout(function() {
         $scope.clear();
-      }, 2500);
+      }, 3000);
     } else if (bb > pp) {
       $scope.annoucement = 'bank wins ' + bb;
       $scope.wager -= $scope.wager;
       $timeout(function() {
         $scope.clear();
-      }, 2500);
+      }, 3000);
     } else {
       $scope.annoucement = 'égalité';
       $scope.balance -= $scope.wager;
       $scope.wager -= $scope.wager;
       $timeout(function() {
         $scope.clear();
-      }, 2500);
+      }, 3000);
     }
   };
 

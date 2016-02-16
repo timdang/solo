@@ -157,25 +157,25 @@ if (Array.indexOf === undefined) {
     "jokers": 0,
     "jokerText": "Joker",
     "ranks": {
-      "2": "Two",
-      "3": "Three",
-      "4": "Four",
-      "5": "Five",
-      "6": "Six",
-      "7": "Seven",
-      "8": "Eight",
-      "9": "Nine",
-      "0": "Ten",
-      "0": "Jack",
-      "0": "Queen",
-      "0": "King",
-      "1": "Ace"
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "0": "10",
+      "0": "jack",
+      "0": "queen",
+      "0": "king",
+      "1": "ace"
     },
     "suits": {
-      "S": "Spades",
-      "D": "Diamonds",
-      "C": "Clubs",
-      "H": "Hearts"
+      "S": "spades",
+      "D": "diamonds",
+      "C": "clubs",
+      "H": "hearts"
     }
   };
 
