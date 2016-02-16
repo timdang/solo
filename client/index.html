@@ -37,6 +37,7 @@
             </div>
           </div>
         </div>
+        <h2>{{ annoucement }}</h2>
         <div class="actions">
           <h3>Current Wager is
             {{ wager | currency:usd$:0  }}<br/>Current line of credit is
@@ -48,7 +49,6 @@
           </button>
           <button class="" ng-click="decrease()" ng-disabled="playerHand.length > 0">Decrease Wager
           </button>
-          <h2>{{ annoucement }}</h2>
         </div>
       </div>
 
