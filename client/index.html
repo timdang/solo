@@ -4,7 +4,7 @@
     <link href="app.css" rel="stylesheet" type="text/css" media="screen">
   </head>
   <body ng-controller="mainController">
-    <h1>Baccarat</h1>
+    <h1>Baccarat - {{ annoucement }}</h1>
 
     <div class="table">
       <!-- This is where the game will be played -->
@@ -35,12 +35,12 @@
       </div>
 
       <div class="actions">
-        <h2>Actions</h2>
-        <button class="" ng-click="playerHit()" ng-disabled="score(playerHand) > 5 || score(playerHand) == 0">Hit
+        <h2>Current Wager is {{ wager }}. Current line of credit is {{ balance }}</h2>
+        <button class="" ng-click="playerHit()" ng-disabled="score(playerHand) > 5 || (score(playerHand) == 0 && playerHand.length == 0)">Hit
         </button>
-        <button class="" ng-click="" ng-disabled="playerHand.length > 0">Wager
+        <button class="" ng-click="increase()" ng-disabled="playerHand.length > 0">Increase Wager
         </button>
-        <button class="" ng-click="" ng-disabled="playerHand.length > 0">Decrease Wager
+        <button class="" ng-click="decrease()" ng-disabled="playerHand.length > 0">Decrease Wager
         </button>
       </div>
     </div>

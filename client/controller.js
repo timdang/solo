@@ -1,23 +1,40 @@
 angular.module('baccarat', ['baccarat.services'])
 
 //main game engine goes here
-.controller('mainController', function($scope, Deck) {
+.controller('mainController', function($scope, $timeout, Deck) {
   $scope.remaining;
   $scope.playerHand = [];
   $scope.bankerHand = [];
+  $scope.annoucement = "Please place your wager s'il vous plaît";
+
+  $scope.balance = 1000000;
+  $scope.wager = 0;
 
   $scope.shuffle = function() {
     $scope.playerHand = [];
     $scope.bankerHand = [];
     cardDeck.init();
     $scope.count();
-  }
+  };
 
   $scope.count = function() {
     $scope.remaining = Deck.count();
-  }
+  };
+
+  $scope.increase = function() {
+    $scope.wager += 25000;
+    $scope.balance -= 25000;
+  };
+
+  $scope.decrease = function() {
+    if ($scope.wager > 0) {
+      $scope.wager -= 25000;
+      $scope.balance += 25000;
+    }
+  };
 
   $scope.deal = function() {
+    $scope.annoucement = "Dealing";
     $scope.playerHand = [];
     $scope.bankerHand = [];
     $scope.dealToPlayer();
@@ -41,8 +58,8 @@ angular.module('baccarat', ['baccarat.services'])
   };
 
   $scope.BankerTurnWith3 = function() {
-    pv = $scope.playerHand[2].rank;
-    bb = $scope.score($scope.bankerHand);
+    var pv = $scope.playerHand[2].rank;
+    var bb = $scope.score($scope.bankerHand);
     // If Player drew a 2 or 3, Banker draws with 0–4 and stands with 5–7.
     if (pv == 2 || pv == 3) {
       if (bb < 5) {
@@ -76,7 +93,7 @@ angular.module('baccarat', ['baccarat.services'])
       $scope.evaluate();
     }
     // If Player drew an ace, 9, 10, or face-card, the Banker draws with 0–3 and stands with 4–7.
-    if (pv == 0 || || pv == 1 || pv == 9) {
+    if (pv == 0 || pv == 1 || pv == 9) {
       if (bb < 4) {
         Deck.hit($scope.bankerHand);
         $scope.count();
@@ -86,7 +103,7 @@ angular.module('baccarat', ['baccarat.services'])
   };
 
   $scope.BankerTurnWith2 = function() {
-    bb = $scope.score($scope.bankerHand);
+    var bb = $scope.score($scope.bankerHand);
     if (bb < 6) {
       Deck.hit($scope.bankerHand);
       $scope.count();
@@ -94,18 +111,49 @@ angular.module('baccarat', ['baccarat.services'])
     $scope.evaluate();
   };
 
-  $scope.naturals() = function() {
-    pp = $scope.score($scope.playerHand)
-    bb = $scope.score($scope.bankerHand)
+  $scope.naturals = function() {
+    var pp = $scope.score($scope.playerHand);
+    var bb = $scope.score($scope.bankerHand);
     if (pp > 7 || bb > 7) {
-      //we have a natural
+      $scope.annoucement = 'natural';
       $scope.evaluate();
+    }
+    if (pp == 6 || pp == 7) {
+      $scope.BankerTurnWith2();
     }
   };
 
   $scope.evaluate = function() {
-    pp = $scope.score($scope.playerHand)
-    bb = $scope.score($scope.bankerHand)
+    $scope.annoucement = 'evaluate';
+    var pp = $scope.score($scope.playerHand);
+    var bb = $scope.score($scope.bankerHand);
+    if (pp > bb) {
+      $scope.annoucement = 'player wins with ' + pp;
+      $scope.balance += (2 * $scope.wager);
+      $scope.wager -= $scope.wager;
+      $timeout(function() {
+        $scope.clear();
+      }, 2500);
+    } else if (bb > pp) {
+      $scope.annoucement = 'bank wins ' + bb;
+      $scope.wager -= $scope.wager;
+      $timeout(function() {
+        $scope.clear();
+      }, 2500);
+    } else {
+      $scope.annoucement = 'égalité';
+      $scope.balance -= $scope.wager;
+      $scope.wager -= $scope.wager;
+      $timeout(function() {
+        $scope.clear();
+      }, 2500);
+    }
+  };
+
+  $scope.clear = function() {
+    $scope.annoucement = "Please place your wager s'il vous plaît";
+    $scope.playerHand = [];
+    $scope.bankerHand = [];
   };
 
   $scope.score = function(hand) {
