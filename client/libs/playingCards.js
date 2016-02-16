@@ -148,7 +148,7 @@ if (Array.indexOf === undefined) {
    * configuration defaults
    */
   playingCards.defaults = {
-    "decks": 1,
+    "decks": 6,
     // TODO: enable 'font' option -- loading cards.ttf
     "renderMode": 'css',
     // For a coustom " of "-String
@@ -165,11 +165,11 @@ if (Array.indexOf === undefined) {
       "7": "Seven",
       "8": "Eight",
       "9": "Nine",
-      "10": "Ten",
-      "J": "Jack",
-      "Q": "Queen",
-      "K": "King",
-      "A": "Ace"
+      "0": "Ten",
+      "0": "Jack",
+      "0": "Queen",
+      "0": "King",
+      "1": "Ace"
     },
     "suits": {
       "S": "Spades",

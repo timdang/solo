@@ -6,15 +6,13 @@
   height: 167px;
   margin-right: 20px;
 }
-
 .covered {
   content: url('img/card-back.png');
 }
-
 .hand {
   overflow: auto;
 }
-
 body {
   background-image: url('https://c2.staticflickr.com/4/3585/3446225050_aec0e07e4f_b.jpg');
+  font-family: sans-serif;
 }
