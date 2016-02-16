@@ -14,11 +14,11 @@
         <button class="" ng-click="deal();">Deal</button>
         <button class="" ng-click="shuffle();">Shuffle</button>
       </div>
-      <div class="dealer-hand-container">
+      <div class="banker-hand-container">
         <div class="hand">
 
-          <h2>Banker ({{ score(dealerHand) }})</h2>
-          <div ng-repeat="items in dealerHand">{{ items.rankString}}
+          <h2>Banker ({{ score(bankerHand) }})</h2>
+          <div ng-repeat="items in bankerHand">{{ items.rankString}}
             of
             {{ items.suitString }}</div>
         </div>
@@ -36,7 +36,7 @@
 
       <div class="actions">
         <h2>Actions</h2>
-        <button class="" ng-click="playerHit()" ng-disabled="score(playerHand) > 5 || playerHand.length !== 2">Hit
+        <button class="" ng-click="playerHit()" ng-disabled="score(playerHand) > 5 || score(playerHand) == 0">Hit
         </button>
         <button class="" ng-click="" ng-disabled="playerHand.length > 0">Wager
         </button>
