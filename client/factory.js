@@ -1,37 +1,20 @@
 angular.module('baccarat.services', [])
 
 .factory('Deck', function() {
-  var playerHand = [];
-  var dealerHand = [];
 
   var shuffle = function() {
     cardDeck.shuffle();
   }
 
-  var dealPlayer = function() {
-
-    playerHand.push(cardDeck.draw());
-    playerHand.push(cardDeck.draw());
-    return playerHand;
+  var dealFlop = function(hand) {
+    hand.push(cardDeck.draw());
+    hand.push(cardDeck.draw());
   };
 
-  var dealDealer = function() {
-
-    dealerHand.push(cardDeck.draw());
-    return dealerHand;
-  };
-
-  var hit = function() {
-    if (playerHand.length < 3) {
-      playerHand.push(cardDeck.draw());
+  var hit = function(hand) {
+    if (hand.length < 3) {
+      hand.push(cardDeck.draw());
     }
-    //call for annimation
-    //run dealer logic
-  }
-
-  var clear = function() {
-    playerHand = [];
-    dealerHand = [];
   }
 
   var count = function() {
@@ -39,13 +22,10 @@ angular.module('baccarat.services', [])
   }
 
   return {
-    cardDeck: cardDeck,
     shuffle: shuffle,
-    dealPlayer: dealPlayer,
-    dealDealer: dealDealer,
+    dealFlop: dealFlop,
     hit: hit,
-    clear: clear,
     count: count
   }
 
-})
+});

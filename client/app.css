@@ -16,3 +16,7 @@ body {
   background-image: url('https://c2.staticflickr.com/4/3585/3446225050_aec0e07e4f_b.jpg');
   font-family: sans-serif;
 }
+.table {
+  height: 400px;
+  width: 600px;
+}

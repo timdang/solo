@@ -3,36 +3,38 @@ angular.module('baccarat', ['baccarat.services'])
 //main game engine goes here
 .controller('mainController', function($scope, Deck) {
   $scope.remaining;
-  $scope.playerHand;
-  $scope.dealerHand;
+  $scope.playerHand = [];
+  $scope.dealerHand = [];
 
   $scope.shuffle = function() {
-    Deck.clear();
     $scope.playerHand = [];
     $scope.dealerHand = [];
     cardDeck.init();
     $scope.count();
   }
+
   $scope.count = function() {
     $scope.remaining = Deck.count();
   }
 
   $scope.deal = function() {
-    Deck.clear();
+    $scope.playerHand = [];
+    $scope.dealerHand = [];
     $scope.dealToPlayer();
     $scope.dealToDealer();
     $scope.count();
   }
+
   $scope.dealToPlayer = function() {
-    $scope.playerHand = Deck.dealPlayer();
+    Deck.dealFlop($scope.playerHand);
   };
 
   $scope.dealToDealer = function() {
-    $scope.dealerHand = Deck.dealDealer();
+    Deck.dealFlop($scope.dealerHand);
   };
 
   $scope.playerHit = function() {
-    Deck.hit();
+    Deck.hit($scope.playerHand);
     $scope.count();
   };
 
