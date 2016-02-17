@@ -150,20 +150,20 @@ angular.module('baccarat', ['baccarat.services'])
     var pp = $scope.score($scope.playerHand);
     var bb = $scope.score($scope.bankerHand);
     if (pp > bb) {
-      $scope.annoucement = 'player wins with ' + pp;
+      $scope.annoucement = 'Player wins with ' + pp;
       $scope.balance += (2 * $scope.wager);
       $scope.wager -= $scope.wager;
       $timeout(function() {
         $scope.clear();
       }, 4000);
     } else if (bb > pp) {
-      $scope.annoucement = 'bank wins ' + bb;
+      $scope.annoucement = 'Banker wins ' + bb;
       $scope.wager -= $scope.wager;
       $timeout(function() {
         $scope.clear();
       }, 4000);
     } else {
-      $scope.annoucement = 'égalité';
+      $scope.annoucement = 'égalité!';
       $scope.balance -= $scope.wager;
       $scope.wager -= $scope.wager;
       $timeout(function() {
