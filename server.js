@@ -34,7 +34,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //the only working routing
-// app.use('/table', express.static(__dirname + '/client'));
+app.use('/table', express.static(__dirname + '/client'));
 
 app.set('view engine', 'ejs');
 

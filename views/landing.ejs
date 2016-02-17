@@ -1,38 +1,47 @@
 <!-- views/signup.ejs -->
 <!doctype html>
 <html>
+
 <head>
-	<title>Welcome</title>
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-	<style>
-		body 		{ padding-top:80px; }
-	</style>
+  <title>Basic Baccarat</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- load bootstrap css -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <!-- load fontawesome -->
+  <style>
+    body {
+      padding-top: 80px;
+      background-image: url('table/img/mc.jpg');
+      background-repeat: no-repeat;
+      background-position: center top; 
+      color: white;
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
+  <div class="container">
 
-<div class="col-sm-6 col-sm-offset-3">
+    <div class="col-sm-6 col-sm-offset-3">
+      <hr>
+      <h1></span>Welcome to the Monte Carlo</h1>
 
-	<h1></span>Welcome to the Monte Carlo</h1>
-
-	<!-- LOGIN FORM -->
-	<form action="/signup" method="post">
+      <!-- LOGIN FORM -->
+      <!-- <form action="/signup" method="post">
 		<div class="form-group">
 			<label>Name</label>
 			<input type="text" class="form-control" name="name">
 		</div>
 
-		<button type="submit" class="btn btn-warning btn-lg">Check In</button>
-
-
-    <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span>Sign in with Google</a>
-	</form>
-
-	<hr>
-
-</div>
-
-</div>
+		<button type="submit" class="btn btn-warning btn-lg">Check In</button> -->
+      <br />
+      <br />
+      <br />
+      <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Sign in with Google</a>
+      </form>
+      <hr>
+    </div>
+  </div>
 </body>
+
 </html>
