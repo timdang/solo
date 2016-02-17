@@ -157,7 +157,7 @@ angular.module('baccarat', ['baccarat.services'])
         $scope.clear();
       }, 4000);
     } else if (bb > pp) {
-      $scope.annoucement = 'Banker wins ' + bb;
+      $scope.annoucement = 'Banker wins with ' + bb;
       $scope.wager -= $scope.wager;
       $timeout(function() {
         $scope.clear();

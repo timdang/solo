@@ -13,13 +13,20 @@
   overflow: auto;
 }
 body {
-
-  font-family: sans-serif;
+  background-image: url('img/mc.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
 }
 .table {
-  background-image: url('https://c2.staticflickr.com/4/3585/3446225050_aec0e07e4f_b.jpg');
+  background-image: url('http://ecx.images-amazon.com/images/I/81U3PZTPIHL._SL1440_.jpg');
   padding-top: 5px;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
+}
+.hand-container {
+  height: 220px;
+}
+.container-fluid {
+    color: white;
 }

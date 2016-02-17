@@ -13,9 +13,9 @@
         <div class="actions">
           <h4>{{remaining}}
             Cards Remaining in the Deck</h4>
-          <button class="" ng-click="shuffle();">Shuffle</button>
+          <button class="btn btn-primary" ng-click="shuffle();">Shuffle</button>
         </div>
-        <div class="banker-hand-container">
+        <div class="hand-container">
           <div class="hand">
             <h3>Banker</h3>
             <!-- <p>({{ score(bankerHand) }})</p> -->
@@ -26,7 +26,7 @@
             </div>
           </div>
         </div>
-        <div class="player-hand-container">
+        <div class="hand-container">
           <div class="hand">
             <h3>Player</h3>
             <!-- <p>({{ score(playerHand) }})</p> -->
@@ -42,12 +42,12 @@
           <h3>Current Wager is
             {{ wager | currency:usd$:0  }}<br/>Current line of credit is
             {{ balance | currency:usd$:0 }}</h3>
-          <button class="" ng-click="deal();" ng-disabled="wager == 0">Deal</button>
-          <button class="" ng-click="playerHit()" ng-disabled="score(playerHand) > 5 || (score(playerHand) == 0 && playerHand.length == 0)">Hit
+          <button class="btn btn-primary" ng-click="deal();" ng-disabled="wager == 0">Deal</button>
+          <button class="btn btn-primary" ng-click="playerHit()" ng-disabled="score(playerHand) > 5 || (score(playerHand) == 0 && playerHand.length == 0)">Hit
           </button>
-          <button class="" ng-click="increase()" ng-disabled="playerHand.length > 0">Increase Wager
+          <button class="btn btn-info" ng-click="increase()" ng-disabled="playerHand.length > 0">Increase Wager
           </button>
-          <button class="" ng-click="decrease()" ng-disabled="playerHand.length > 0">Decrease Wager
+          <button class="btn btn-info" ng-click="decrease()" ng-disabled="playerHand.length > 0">Decrease Wager
           </button>
         </div>
       </div>
